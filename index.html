@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clases de Guitarra</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Clases de Guitarra</h1>
+  <p>Aprendé desde cero o mejorá tu técnica</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#productos">Clases</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- INICIO -->
+  <section id="inicio">
+    <h2>Bienvenido</h2>
+    <p>Clases personalizadas online o presenciales.</p>
+
+    <!-- Multimedia -->
+    <iframe width="300" height="200"
+      src="https://www.youtube.com/embed/2Vv-BfVoq4g"
+      title="Video de guitarra"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- PRODUCTOS (FLEXBOX) -->
+  <section id="productos">
+    <h2>Clases</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Básico</h3>
+        <p>Para principiantes</p>
+      </div>
+
+      <div class="card">
+        <h3>Intermedio</h3>
+        <p>Mejorá técnica y ritmo</p>
+      </div>
+
+      <div class="card">
+        <h3>Avanzado</h3>
+        <p>Improvisación y estilos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS (GRID) -->
+  <section id="resenas">
+    <h2>Reseñas</h2>
+
+    <div class="grid">
+      <div>“Excelente profesor”</div>
+      <div>“Aprendí rápido”</div>
+      <div>“Muy recomendable”</div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+
+    <form action="https://formspree.io/f/xvzlakpq" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Correo" required>
+      <textarea name="mensaje" placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Clases de Guitarra</p>
+</footer>
+
+</body>
+</html>
