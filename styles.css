@@ -77,20 +77,3 @@ form {
     grid-template-columns: 1fr;
   }
 }
-/* ...tu código actual... */
-
-iframe {
-  max-width: 100%;
-  height: auto; 
-}
-
-.card {
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
