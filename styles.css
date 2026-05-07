@@ -77,3 +77,13 @@ form {
     grid-template-columns: 1fr;
   }
 }
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-titulo img {
+  width: 50px;
+}
