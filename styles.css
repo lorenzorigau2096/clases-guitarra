@@ -1,0 +1,90 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* HEADER Y FOOTER */
+header, footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* NAV */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: #333;
+  padding: 10px;
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* SECCIONES */
+section {
+  padding: 20px;
+}
+
+/* FLEXBOX (PRODUCTOS) */
+.cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: lightgray;
+  padding: 20px;
+  flex: 1;
+  border-radius: 8px;
+}
+
+/* GRID (RESEÑAS) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid div {
+  background: #ddd;
+  padding: 15px;
+}
+
+/* FORMULARIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-titulo img {
+  width: 60px;
+}
