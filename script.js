@@ -5,13 +5,21 @@ const totalElemento = document.getElementById("total");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const nombresClases = [
-  "Clase Inicial",
-  "Clase Intermedia",
-  "Clase Avanzada",
-  "Improvisación y Solos",
-  "Armonía Moderna",
-  "Técnicas Profesionales"
+const clases = [
+  { nombre: "Clase Inicial", precio: 5000 },
+  { nombre: "Clase Intermedia", precio: 7000 },
+  { nombre: "Clase Avanzada", precio: 9000 },
+  { nombre: "Improvisación y Solos", precio: 11000 },
+  { nombre: "Armonía Moderna", precio: 12000 },
+  { nombre: "Técnicas Profesionales", precio: 15000 }
+];
+const imagenes = [
+  "img/clase1.jpg",
+  "img/clase2.jpg",
+  "img/clase3.jpg",
+  "img/clase4.jpg",
+  "img/clase5.jpg",
+  "img/clase6.jpg"
 ];
 
 fetch("https://fakestoreapi.com/products?limit=6")
@@ -22,19 +30,19 @@ fetch("https://fakestoreapi.com/products?limit=6")
       card.classList.add("card");
 
       card.innerHTML = `
-        <img src="${producto.image}" alt="${nombresClases[index]}" width="120">
-        <h3>${nombresClases[index]}</h3>
-        <p>$${producto.price}</p>
+      <img src="${imagenes[index]}" alt="${nombresClases[index]}" width="220">
+<h3>${clases[index].nombre}</h3>
+<p>$${clases[index].precio}</p>
 
-        <button onclick="agregarAlCarrito(${producto.id}, '${nombresClases[index]}', ${producto.price})">
-          Agregar al carrito
-        </button>
+<button onclick="agregarAlCarrito(${producto.id}, '${clases[index].nombre}', ${clases[index].precio})">
+  Agregar al carrito
+</button>
       `;
 
       listaProductos.appendChild(card);
     });
   });
-  
+
 function agregarAlCarrito(id, titulo, precio) {
   const existente = carrito.find(p => p.id === id);
 
