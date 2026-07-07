@@ -5,18 +5,28 @@ const totalElemento = document.getElementById("total");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+const nombresClases = [
+  "Clase Inicial",
+  "Clase Intermedia",
+  "Clase Avanzada",
+  "Improvisación y Solos",
+  "Armonía Moderna",
+  "Técnicas Profesionales"
+];
+
 fetch("https://fakestoreapi.com/products?limit=6")
   .then(res => res.json())
   .then(productos => {
-    productos.forEach(producto => {
+    productos.forEach((producto, index) => {
       const card = document.createElement("div");
       card.classList.add("card");
 
       card.innerHTML = `
-        <img src="${producto.image}" alt="${producto.title}" width="120">
-        <h3>${producto.title}</h3>
+        <img src="${producto.image}" alt="${nombresClases[index]}" width="120">
+        <h3>${nombresClases[index]}</h3>
         <p>$${producto.price}</p>
-        <button onclick="agregarAlCarrito(${producto.id}, '${producto.title.replace(/'/g, "\\'")}', ${producto.price})">
+
+        <button onclick="agregarAlCarrito(${producto.id}, '${nombresClases[index]}', ${producto.price})">
           Agregar al carrito
         </button>
       `;
@@ -24,7 +34,7 @@ fetch("https://fakestoreapi.com/products?limit=6")
       listaProductos.appendChild(card);
     });
   });
-
+  
 function agregarAlCarrito(id, titulo, precio) {
   const existente = carrito.find(p => p.id === id);
 
