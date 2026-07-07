@@ -30,7 +30,7 @@ fetch("https://fakestoreapi.com/products?limit=6")
       card.classList.add("card");
 
       card.innerHTML = `
-      <img src="${imagenes[index]}" alt="${nombresClases[index]}" width="220">
+     <img src="${imagenes[index]}" alt="${clases[index].nombre}" width="220">
 <h3>${clases[index].nombre}</h3>
 <p>$${clases[index].precio}</p>
 
