@@ -29,15 +29,15 @@ fetch("https://fakestoreapi.com/products?limit=6")
       const card = document.createElement("div");
       card.classList.add("card");
 
-      card.innerHTML = `
-     <img src="${imagenes[index]}" alt="${clases[index].nombre}" width="220">
-<h3>${clases[index].nombre}</h3>
-<p>$${clases[index].precio}</p>
+    card.innerHTML = `
+  <img src="${imagenes[index]}" alt="${clases[index].nombre}" width="220">
+  <h3>${clases[index].nombre}</h3>
+  <p>$${clases[index].precio}</p>
 
-<button onclick="agregarAlCarrito(${producto.id}, '${clases[index].nombre}', ${clases[index].precio})">
-  Agregar al carrito
-</button>
-      `;
+  <button onclick="agregarAlCarrito(${producto.id}, '${clases[index].nombre}', ${clases[index].precio})">
+    Agregar al carrito
+  </button>
+`;
 
       listaProductos.appendChild(card);
     });
@@ -126,3 +126,14 @@ function guardarCarrito() {
 }
 
 renderizarCarrito();
+const formulario = document.querySelector("form");
+
+formulario.addEventListener("submit", function (e) {
+  const nombre = formulario.nombre.value.trim();
+  const email = formulario.email.value.trim();
+
+  if (nombre === "" || email === "") {
+    e.preventDefault();
+    alert("Por favor complete todos los campos.");
+  }
+});
